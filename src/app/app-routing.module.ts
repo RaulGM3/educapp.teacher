@@ -53,8 +53,17 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'courses',
-        loadChildren: () => import('./school/courses/courses.module').then( m => m.CoursesPageModule)
+        path: 'grades',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./school/grades/grades.module').then( m => m.GradesPageModule)
+          },
+          {
+            path: 'add-grade',
+            loadChildren: () => import('./school/grades/add-grade/add-grade.module').then( m => m.AddGradePageModule)
+          }
+        ]
       }
     ]
   },
