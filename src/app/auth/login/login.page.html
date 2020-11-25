@@ -1,0 +1,27 @@
+<ion-toolbar>
+  <ion-title>login</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <ion-grid>
+    <form action="">
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+            <ion-button class="submit" (click)="submit()" expand="block" fill="outline" shape="round">
+              Click me
+            </ion-button>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
