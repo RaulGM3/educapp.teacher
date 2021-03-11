@@ -1,0 +1,60 @@
+<ion-toolbar>
+  <ion-title>Crear Asignatura</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-list>
+            <ion-item>
+              <ion-label class="input" position="floating">
+                Nombre
+              </ion-label>
+              <ion-input
+                type="text"
+                formControlName="name"
+                required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label class="input" position="floating">
+                Descripción
+              </ion-label>
+              <ion-input
+                type="text"
+                formControlName="description"
+                required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label class="input" position="floating">
+                Grado
+              </ion-label>
+              <ion-select formControlName="degree">
+                <ion-select-option
+                  *ngFor="let deg of degrees"
+                  [value]="deg"
+                >
+                  {{ deg }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+            
+          <ion-button
+            type="submit"
+            color="primary"
+            expand="block"
+            (click)="onSubmit()"
+          >
+            Crear
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
